@@ -1,11 +1,175 @@
 <!DOCTYPE Html>
 <html>
-    <head>
-        <title>Cool Place</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <src script="script.js" />
-    </head>
-    <body>
-        <h1>Hello World</h1>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>Cool Place</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <label for="quota">Número de primos:</label>
+    <input type="text" id="quota" name="quota" value="1000000" />
+
+    <button id="generate">Gerar primos</button>
+    <button id="reload">Recarregar</button>
+
+    <div id="output"></div>
+    <div>
+        <form>
+            <label for="prime">Tenta digitar aqui rapidao antes de concluir a chamada do teu numero primo enorme maior
+                que esse texto:</label>
+            <input name="prime" title="Prime" type="text">
+        </form>
+    </div>
+
+    <!-- <button id="xhr">Clique para iniciar a solicitação</button>
+    <button id="reload2">Recarregar</button> -->
+
+    <pre readonly class="event-log"></pre>
+
+</body>
+
 </html>
+<script>
+    const MAX_PRIME = 1000000;
+
+    function isPrime(n) {
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) {
+                return false;
+            }
+        }
+        return n > 1;
+    }
+
+    const random = (max) => Math.floor(Math.random() * max);
+
+    function generatePrimes(quota) {
+        const primes = [];
+        while (primes.length < quota) {
+            const candidate = random(MAX_PRIME);
+            if (isPrime(candidate)) {
+                primes.push(candidate);
+            }
+        }
+        return primes;
+    }
+
+    const quota = document.querySelector("#quota");
+    const output = document.querySelector("#output");
+
+    document.querySelector("#generate").addEventListener("click", () => {
+        const primes = generatePrimes(quota.value);
+        output.textContent = `Finished generating ${quota.value} primes!`;
+    });
+
+    document.querySelector("#reload").addEventListener("click", () => {
+        document.location.reload();
+    });
+
+    // const log = document.querySelector(".event-log");
+
+    // document.querySelector("#xhr").addEventListener("click", () => {
+    //     log.textContent = "";
+
+    //     const xhr = new XMLHttpRequest();
+
+    //     xhr.addEventListener("loadend", () => {
+    //         log.textContent = `${log.textContent}Concluído com status: ${xhr.status}`;
+    //     });
+
+    //     xhr.open(
+    //         "GET",
+    //         "https://raw.githubusercontent.com/mdn/content/main/files/en-us/_wikihistory.json",
+    //     );
+    //     xhr.send();
+    //     log.textContent = `${log.textContent}Iniciada solicitação XHR\n`;
+    // });
+
+    // document.querySelector("#reload2").addEventListener("click", () => {
+    //     log.textContent = "";
+    //     document.location.reload();
+    // });
+</script>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        color: rgb(1, 72, 1);
+        background-color: lightpink;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* alinha os elementos horizontalmente */
+        border: 2px solid rgb(1, 72, 1);
+        margin: 30px;
+        margin-bottom: 90px;
+        /* adiciona uma margem inferior */
+        scroll-behavior: smooth;
+        padding: 10px;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(1, 72, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        color: lightpink;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        margin: 5px 10px;
+        padding: 10px;
+        border: 2px solid rgb(1, 72, 1);
+        align-self: start;
+        width: 100px;
+        color: rgb(1, 72, 1);
+        border-radius: 5px;
+    }
+
+    section,
+    form {
+        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .btn {
+        margin-top: 10px;
+        border: 1px solid rgb(1, 72, 1);
+        color: lightpink;
+        background-color: rgb(1, 72, 1);
+        width: 100px;
+        margin-top: 10px;
+        border-radius: 5px;
+        /* bordas arredondadas */
+        padding: 10px;
+        /* algum preenchimento */
+        text-decoration: none;
+        /* remove o sublinhado */
+        text-align: center;/
+    }
+
+    .btn:hover {
+        background-color: black;
+        color: rgb(1, 72, 1);
+    }
+</style>
