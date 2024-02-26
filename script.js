@@ -53,7 +53,7 @@ class Animal {
 }
 
 // Exemplo de instância
-const tiger = new Animal(
+var tiger = new Animal(
   "Mammal",
   "Tiger",
   "A fierce predator with stripes.",
@@ -119,7 +119,7 @@ const myInstance = new MyClass("John");
 myInstance.greet(); // Saída: Hello, John!
 
 // Classe base usando class declaration
-class Animal {
+class Animal2 {
   constructor(name) {
     this.name = name;
   }
@@ -130,7 +130,7 @@ class Animal {
 }
 
 // Classe derivada usando class expression
-const Mammal = class extends Animal {
+const Mammal = class extends Animal2 {
   constructor(name, furColor) {
     super(name); // Chamando o construtor da classe pai
     this.furColor = furColor;
@@ -148,16 +148,16 @@ const Mammal = class extends Animal {
 };
 
 // Criando instâncias das classes
-const genericAnimal = new Animal("Generic Animal");
-const mammalInstance = new Mammal("Mammal Example", "Brown");
+const genericAnimal2 = new Animal2("Generic Animal");
+const mammalInstance1 = new Mammal("Mammal Example", "Brown");
 
 // Chamando métodos das instâncias
-genericAnimal.speak(); // Saída: Generic Animal makes a sound.
-mammalInstance.speak(); // Saída: Mammal Example is a mammal and makes a sound.
-mammalInstance.showFur(); // Saída: Mammal Example's fur color is Brown.
+genericAnimal2.speak(); // Saída: Generic Animal makes a sound.
+mammalInstance1.speak(); // Saída: Mammal Example is a mammal and makes a sound.
+mammalInstance1.showFur(); // Saída: Mammal Example's fur color is Brown.
 
 // Classe base usando class declaration
-class Animal {
+class Animal3 {
   constructor(name) {
     this.name = name;
   }
@@ -173,7 +173,7 @@ class Animal {
 }
 
 // Classe derivada usando class expression
-const Mammal = class extends Animal {
+const Mammal2 = class extends Animal3 {
   constructor(name, furColor) {
     super(name); // Chamando o construtor da classe pai
     this.furColor = furColor;
@@ -191,8 +191,8 @@ const Mammal = class extends Animal {
 };
 
 // Criando instâncias das classes
-const genericAnimal = new Animal("Generic Animal");
-const mammalInstance = new Mammal("Mammal Example", "Brown");
+const genericAnimal = new Animal3("Generic Animal");
+const mammalInstance = new Mammal2("Mammal Example", "Brown");
 
 // Chamando métodos das instâncias
 genericAnimal.speak(); // Saída: Generic Animal makes a sound.
@@ -200,4 +200,4 @@ mammalInstance.speak(); // Saída: Mammal Example is a mammal and makes a sound.
 mammalInstance.showFur(); // Saída: Mammal Example's fur color is Brown.
 
 // Chamando o método estático da classe Animal
-Animal.info(); // Saída: Animals are diverse living organisms on Earth.
+Animal3.info(); // Saída: Animals are diverse living organisms on Earth.
