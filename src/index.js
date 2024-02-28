@@ -7,3 +7,6 @@ ReactDOM.render(
     <App />,
     document.getElementById("root")
 )
+
+// const root = document.querySelector("#root")
+// ReactDOM.createRoot(root)
