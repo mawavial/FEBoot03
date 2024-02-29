@@ -5,7 +5,6 @@
     ],
     "plugins": [
         "@babel/plugin-transform-runtime",
-        //pura maldade aqui
         "transform-remove-strict-mode"
     ]
 }
