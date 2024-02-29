@@ -7,9 +7,11 @@
 
  .header {
      background-color: rgb(1, 72, 1);
-     color: rgb(241, 0, 104);
-     padding: 10px;
+     color: rgb(255, 255, 255);
      text-align: center;
+     position: fixed;
+     top: 0;
+     width: 100%;
  }
 
  .container {
@@ -19,13 +21,12 @@
      /* alinha os elementos horizontalmente */
      border: 2px solid rgb(1, 72, 1);
      margin: 30px;
-     margin-bottom: 90px;
      /* adiciona uma margem inferior */
      scroll-behavior: smooth;
      padding: 10px;
  }
 
- footer {
+ .footer {
      position: fixed;
      bottom: 0;
      width: 100%;
@@ -65,7 +66,7 @@
  .btn {
      margin-top: 10px;
      border: 1px solid rgb(1, 72, 1);
-     color: rgb(241, 0, 104);
+     color: rgb(255, 255, 255);
      background-color: rgb(1, 72, 1);
      width: 100px;
      margin-top: 10px;
@@ -86,4 +87,13 @@
  .btn:active {
      background-color: rgb(241, 0, 104);
      color: rgb(1, 72, 1);
+ }
+
+ .text-field {
+     margin: 10px;
+     padding: 10px;
+     border: 2px solid rgb(1, 72, 1);
+     border-radius: 5px;
+     width: 200px;
+     text-align: center;
  }
