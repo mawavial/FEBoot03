@@ -8,6 +8,7 @@ export const AppContext = createContext(null)
 
 const App = () => (
     <>
+
         <AppContext.Provider value={ { name: 'John Weekend' } }>
             <Header />
             <div style={ { marginTop: 90 } } className="container">

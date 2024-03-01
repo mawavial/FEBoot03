@@ -6,4 +6,6 @@ function Contextor() {
     return <p style={ { color: 'white' } }> { contextValue.name }</p>
 }
 
+
+
 export default Contextor
