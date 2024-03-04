@@ -1,13 +1,9 @@
 import React from 'react'
 
-//Alguem disse que isso funciona
-export default function Counter({ count, onIncrement, onDecrement }) {
+export default function Counter({ }) {
 
     return (
         <div>
-            <button onClick={ onIncrement }>+</button>
-            <span>{ count }</span>
-            <button onClick={ onDecrement }>-</button>
         </div>
     )
 }
