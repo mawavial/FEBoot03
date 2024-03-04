@@ -9,7 +9,7 @@ Voce deve usar o hook useReducer para manter o estado do contador atualizado. O 
 
 # Exercicio 14
 
-Como vimos durante a aula eh muito dificil remover o comportamento padrao do webpack e babel que por conta de seguranca sempre mantem o build do seu projeto como "use strict". Ou seja, variaveis globais nao podem ser salvas na window do seu projeto, portanto as variaveis do projeto sao sempre inacessiveis portanto mais seguras.
+Como vimos durante a aula eh muito dificil remover o comportamento padrao do webpack e babel que por conta de seguranca sempre mantem o build do seu projeto como "use strict". Ou seja, variaveis globais nao podem ser salvas na window do seu projeto, portanto as variaveis do projeto sao sempre inacessiveis logo mais seguras.
 
 Em alguns casos nos queremos dar um override nesse tipo de configuracao. Nesta aplicacao estamos usando webpack com babel para compilar nosso codigo em dist/bundle.js.
 
