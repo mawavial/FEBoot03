@@ -10,7 +10,7 @@ import Complexity from './pages/complexity'
 
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
-  { path: '/complexity/:level', element: <Complexity /> },
+  { path: '/complexity/:level/:id?', element: <Complexity /> },
   { path: '/about', element: <About /> },
   { path: '/example', element: <Example />, },
   {

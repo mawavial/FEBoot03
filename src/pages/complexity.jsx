@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 
 const Complexity = () => {
     const { level } = useParams()
-    console.log('%c%s', 'color: #ff0000', level)
+    fetch(`https://jsonplaceholder.typicode.com/todos/${level}`).then(response => response.json()).then(json => console.log(json))
 
     return (
         <div>
