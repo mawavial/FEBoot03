@@ -1,4 +1,4 @@
-import { Route, Link, Routes } from 'react-router-dom'
+import { Route, Link, Routes, Outlet } from 'react-router-dom'
 
 export const Irma = () => {
     return (
@@ -74,7 +74,7 @@ export const Pai = () => {
 
 const Blog = () => {
     return (
-        <div>
+        <div style={ { textAlign: 'center' } }>
             <h1>Blog</h1>
             <p>This is the blog page</p>
 
@@ -104,6 +104,8 @@ const Blog = () => {
                     <Link to="/blog/irma">Irma</Link>
                 </li>
             </ul>
+            <Link to="/">Go back to homepage</Link>
+            <Outlet />
         </div>
     )
 }
