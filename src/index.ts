@@ -1,53 +1,31 @@
-enum Color {Red, Green, Blue}
-class Contact{ 
-    id!: number;
-    name: string;
-    email: string;
-    phone: string;
-
-    constructor() {
-        this.id = 0;
-        this.name = '';
-        this.email = '';
-        this.phone = '';
-    }
-
-    print() {
-        console.log(this.name);
-    }
-    
+enum ContactStatusEnum { 
+    Active = 'Active',
+    Inactive = 'Inactive',
+    Deleted = 'Deleted'
 }
 
-
-interface IAddress {
-    street: string;
-    city: string;
-    state: string;
-    zip: string;
-}
-
-interface IContact{ 
+class Contact {
     id: number;
     name: string;
-    birthDate?: Date;
-    phoneNumber: string;
-    address?: IAddress | null;
+    birthDate: Date;
+    phone: string;
+    status: ContactStatusEnum;
+
+    constructor(id: number, name: string, birthDate: Date, phone: string, status: ContactStatusEnum) {
+        this.id = id;
+        this.name = name;
+        this.birthDate = birthDate;
+        this.phone = phone;
+        this.status = status;
+    }
 }
 
-type CrazyType = Array<string> | string | object | number | boolean | null | undefined;
-
-type Animal = string | null | undefined;
-
-interface IAnimal {
-    name: Animal;
-    age: crazyType;
-    isPet: crazyType;
+function clone(source: Contact): Contact {
+    return {...source};
 }
 
-let primaryContact: IContact = { 
-    id: 1,
-    name: 'John Doe',
-    birthDate: new Date('16-09-1989'),
-    phoneNumber: '123-456-7890',
 
-}
+const contact = new Contact(1, 'John Doe', new Date(), '1234567890', ContactStatusEnum.Active);
+console.log('%c%s', 'color: #00e600', JSON.stringify(contact));
+const cloned = clone(contact);
+console.log('%c%s', 'color: #b508ff', JSON.stringify(cloned));
