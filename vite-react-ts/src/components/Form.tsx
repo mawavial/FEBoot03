@@ -1,29 +1,17 @@
 
-interface User {
-    name: string
-    email: string
-}
+import React, { ReactNode } from 'react';
 
-interface Tour {
-    title: string
-    description: string
-    price: number
-}
+type FormProps = {
+    children: ReactNode;
+};
 
-interface Media extends User {
-    image: string
-    video: string
-    tour: Tour
-}
+//this component is lacking a little bit of control, but it's fine for now
+const Form: React.FC<FormProps> = ({ children }) => {
+    return (
+        <form>
+            {children}
+        </form>
+    );
+};
 
-type TourMedia = Tour & Media
-type Status = 'idle' | 'loading' | 'success' | 'error'
-
-const maloqueiro: Media = {
-    name: 'Maloqueiro',
-    email: 'masa@msdlfoksdl.;cjfiosjefiose',
-
-}
-
-
-type User = { name: string, email: string }
+export default Form;
